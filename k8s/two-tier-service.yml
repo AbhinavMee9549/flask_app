@@ -1,0 +1,17 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: two-tier-app-service
+
+
+spec:
+  selector:
+    app: two-tier-app
+
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5000
+      nodePort: 30007
+  type: NodePort
+      
